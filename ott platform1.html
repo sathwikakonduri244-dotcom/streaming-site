@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>StreamFlix</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0f171e;
+    color: white;
+}
+
+/* Navbar */
+nav {
+    background-color: #111;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: #00a8e1;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li:hover {
+    color: #00a8e1;
+    cursor: pointer;
+}
+
+/* Main Video */
+.main-video {
+    padding: 30px;
+}
+
+video {
+    width: 100%;
+    max-height: 450px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,168,225,0.5);
+}
+
+/* Section */
+.section {
+    padding: 20px 30px;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+}
+
+/* Video Cards */
+.video-row {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.card {
+    min-width: 220px;
+    background-color: #1c2b36;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.08);
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card p {
+    text-align: center;
+    padding: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <h1>StreamFlix</h1>
+    <ul>
+        <li>Home</li>
+        <li>Movies</li>
+        <li>TV Shows</li>
+        <li>Sports</li>
+        <li>cartoons</li>
+    </ul>
+</nav>
+
+<!-- Main Video Player -->
+<div class="main-video">
+    <video id="player" controls autoplay muted>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+</div>
+
+<!-- Movies Section -->
+<div class="section">
+    <h2>Popular Movies</h2>
+    <div class="video-row">
+        <div class="card" onclick="playVideo('https://www.w3schools.com/html/mov_bbb.mp4')">
+            <img src="https://picsum.photos/300/200?1">
+            <p>Action Movie</p>
+        </div>
+
+        <div class="card" onclick="playVideo('https://www.w3schools.com/html/movie.mp4')">
+            <img src="https://picsum.photos/300/200?2">
+            <p>Drama Movie</p>
+        </div>
+
+        <div class="card" onclick="playVideo('https://media.w3.org/2010/05/sintel/trailer.mp4')">
+            <img src="https://picsum.photos/300/200?3">
+            <p>Adventure Movie</p>
+        </div>
+
+        <div class="card" onclick="playVideo('https://media.w3.org/2010/05/bunny/movie.mp4')">
+            <img src="https://picsum.photos/300/200?4">
+            <p>Comedy Movie</p>
+        </div>
+    </div>
+</div>
+
+<!-- TV Shows -->
+<div class="section">
+    <h2>TV Shows</h2>
+    <div class="video-row">
+        <div class="card" onclick="playVideo('https://media.w3.org/2010/05/video/movie_300.mp4')">
+            <img src="https://picsum.photos/300/200?5">
+            <p>Web Series 1</p>
+        </div>
+
+        <div class="card" onclick="playVideo('https://media.w3.org/2010/05/sintel/trailer.mp4')">
+            <img src="https://picsum.photos/300/200?6">
+            <p>Web Series 2</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 StreamFlix | OTT Streaming Platform
+</footer>
+
+<!-- JavaScript -->
+<script>
+function playVideo(videoURL) {
+    const player = document.getElementById("player");
+    player.src = videoURL;
+    player.play();
+}
+</script>
+
+</body>
+</html>
